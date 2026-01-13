@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: 'Great Vibes', cursive;
+}
+
+.container {
+    text-align: center;
+}
+
+.logo {
+    color: #d4af37; /* Classic Gold */
+    font-size: clamp(3rem, 15vw, 8rem);
+    font-weight: 400;
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: fadeIn 2.5s ease-out forwards;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+    user-select: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+        filter: blur(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* Add a subtle vignette effect to the background */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 40%, rgba(0,0,0,0.8) 100%);
+    pointer-events: none;
+}
